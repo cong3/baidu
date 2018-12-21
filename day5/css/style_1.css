@@ -1,0 +1,14 @@
+.wrapper {
+    width: 600px;
+    margin: 0 auto;
+}
+.title {
+    font-weight: bold;
+}
+section {
+    display: inline-block;
+    margin-right: 10px;
+}
+ul {
+    list-style: none;
+}

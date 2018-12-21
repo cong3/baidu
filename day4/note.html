@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul>
+    <li>
+        背景，边框，列表，链接相关属性
+        <p>
+            背景 background
+            background	简写属性，作用是将背景属性设置在一个声明中。
+            background-attachment	背景图像是否固定或者随着页面的其余部分滚动。	scroll、fixed、
+            background-color	设置元素的背景颜色。	transparent（默认透明） 、red、#ff0000、rgb(255,0,0)
+            background-image	把图像设置为背景。	none（默认）、url('URL')
+            background-position	设置背景图像的起始位置。	关键字、百分数值、长度值
+            background-repeat	设置背景图像是否及如何重复。	repeat(默认)、repeat-x、repeat-y、no-repeat
+            <hr>
+            边框border:
+            border	用于把针对四个边的属性设置在一个声明。
+            border-style	用于设置元素所有边框的样式，或者单独地为各边设置边框样式。	none、hidden、dotted、dashed、solid、double、groove、ridge、inset、outset、inherit 样式
+            border-width	用于为元素的所有边框设置宽度，或者单独地为各边边框设置宽度。	thin、medium、thick、length
+            border-color	设置元素的所有边框中可见部分的颜色，或为 4 个边分别设置颜色。	transparent（默认透明） 、red、#ff0000、rgb(255,0,0)
+            <hr>
+            列表list
+            list-style	简写属性。用于把所有用于列表的属性设置于一个声明中。	Text
+            list-style-image	将图象设置为列表项标志。	none、URL
+            list-style-position	设置列表中列表项标志的位置。	inside(文本内文本环绕)、outside(默认)
+            list-style-type	设置列表项标志的类型。	值
+        </p>
+    </li>
+    <li>
+        CSS 各种选择器的概念，使用方法及使用场景
+        <p>
+            类选择器：通过指定元素的class属性。
+            id选择器：通过指定元素的id属性。必须唯一。
+            标签选择器；以元素的标签名称作为选择器。
+            属性选择器：通过元素的属性值进行匹配选择。
+            伪类选择器：:hovbe,:visited,:link等很多
+            伪元素选择器：比伪元素多一个：，
+            还有组合起来的复杂选择器，后代，子类等。
+        </p>
+    </li>
+    <li>
+        CSS 选择器的优先级
+        <p>
+            一个选择器具有的专用性的量是用四种不同的值（或组件）来衡量的，它们可以被认为是千位，百位，十位和个位——在四个列中的四个简单数字：
+            - 千位：如果声明是在style 属性中该列加1分（这样的声明没有选择器，所以它们的专用性总是1000。）否则为0。
+            - 百位：在整个选择器中每包含一个ID选择器就在该列中加1分.
+            - 十位：在整个选择器中每包含一个类选择器、属性选择器、或者伪类就在该列中加1分。
+            - 个位：在整个选择器中每包含一个元素选择器或伪元素就在该列中加1分。
+            - 注意：
+            1. ==!important== 声明的样式优先级最高，如果冲突再进行计算。
+            2. 如果优先级相同，则选择最后出现的样式。
+            3. 继承得到的样式的优先级最低。
+            - 结论是：
+            比较同一级别的个数，数量多的优先级高，如果相同即比较下一级别的个数
+            important->内联->ID->类->标签|伪类|属性选择->伪对象->继承->通配符->继承
+        </p>
+    </li>
+
+</ul>
+</body>
+</html>

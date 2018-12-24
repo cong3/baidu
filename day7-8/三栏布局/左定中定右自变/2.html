@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左定中定右自变（postion方法）</title>
+    <style>
+        .wrapper {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        #left {
+            width: 100px;
+            height: 100%;
+            position: absolute;
+            background-color: red;
+        }
+        #center {
+            width: 100px;
+            height: 100%;
+            position: absolute;
+            left: 100px;
+            background-color: pink;
+        }
+        #right {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 200px;
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div id="left">
+        left
+    </div>
+    <div id="center">
+        center
+    </div>
+    <div id="right">
+        right
+    </div>
+</div>
+
+</body>
+</html>

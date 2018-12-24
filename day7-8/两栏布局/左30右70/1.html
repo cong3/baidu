@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左侧30%右侧70%(float方法)</title>
+    <style>
+        .wrapper {
+            width: 100%;
+            height: 100vh;
+        }
+        #left {
+            width: 30%;
+            height: 100%;
+            float: left;
+            background-color: red;
+        }
+        #right {
+            width: 70%;
+            height: 100%;
+            float: left;
+            background-color: aqua;
+        }
+        .wrapper::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div id="left">
+left
+    </div>
+    <div id="right">
+right
+    </div>
+</div>
+
+</body>
+</html>

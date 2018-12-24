@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>右侧固定左侧自适应(float方法)</title>
+    <style>
+        .wrapper {
+            width: 100%;
+            height: 100vh;
+            padding-right: 110px;
+        }
+        #left {
+            width: 100%;
+            height: 100%;
+            float: left;
+            background-color: red;
+        }
+        #right {
+            width: 100px;
+            height: 100%;
+            float: left;
+            margin-left: -100px;
+            background-color: aqua;
+        }
+        .wrapper::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div id="left">
+left
+    </div>
+    <div id="right">
+right
+    </div>
+</div>
+
+</body>
+</html>

@@ -10,6 +10,7 @@
     <ul>
         <li>盒模型的概念</li>
         <p>
+            任何一个HTML元素都可以视为一个盒模型，一个盒子包括了content（实际内容）、border（边框）、padding（内边距）和margin（外边距）。
 
         </p>
         <li>inline、block和inline-block的概念内外边距，宽度，高度，box-sizing等属性</li>
@@ -18,6 +19,66 @@
         </p>
         <li> 浮动，清除浮动</li>
         <p>
+            1.浮动的背景和工作原理
+            浮动的最初是用来让文字环绕图片, 所以我能能推出:
+            浮动会脱离正常的文档流，并吸附到其父容器左边，正常布局中位于浮动元素下的内容会围绕着浮动元素
+
+            浮动的包裹性
+            包裹性指的是元素尺寸刚好容纳内容, 表现得就像diaplay:inline-block一样
+
+            具有包裹性的其他属性:
+            display:inline-block
+            position:absolute/fixed/sticky
+            overflow:hidden/scroll
+            浮动的破坏性
+            会使父元素高度塌陷——为了实现文字环绕效果
+
+            具有破坏性的其他属性:
+
+            display:none
+            position:absolute/fixed/sticky
+            怎么解决破坏性带来的问题呢？
+
+            清除浮动 (clearfix hack)
+            在父元素底部加上<code><div style="clear:both;"></div></code>
+
+        虽说兼容性好，但是浪费一个标签，违反了语义化，不推荐
+
+        overflow + zoom法
+        补充知识: BFC(Block Formatting Context)
+
+        BFC:块级格式化上下文【在css3中叫Flow Root】是一个独立布局环境，相邻盒子margin垂直方向会重叠。
+
+        什么样的元素会为其内容生成一个BFC呢？
+
+        浮动元素，即float:left/right
+        绝对定位元素，即position:absolute/fixed
+        块容器，即display:table-cell/table-caption/inline-block
+        设置了除visible外的overflow值的块盒子，即overflow:hidden/scroll/auto
+        BFC特性：
+
+        创建了BFC的元素中，子浮动元素也会参与高度计算
+        与浮动元素相邻的、创建了BFC的元素，都不能与浮动元素相互覆盖
+        创建了BFC的元素不会与它们的子元素margin重叠
+        因为子浮动元素也会参与高度计算, 所以借此可以得到以下方法:
+
+        .fix {
+        overflow:hidden; zoom:1;
+        }
+        方法不错，但是可能内容会被裁减掉，可以偶尔用用
+
+        after + zoom法
+        :after选择符
+
+        .clearfix:after {
+        content: " ";  //content可以任意发挥
+        display: block;
+        clear: both;
+        }
+        .clearfix {
+        zoom: 1;
+        }
+        这个方法最佳, 推荐这个方法
 
         </p>
         <li>如何使用浮动进行布局</li>

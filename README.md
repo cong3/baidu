@@ -1,4 +1,4 @@
-# baidu
+# 百度2018
 
 ## day7-8
 ### 两栏布局 
@@ -23,3 +23,8 @@
 - [圣杯布局](https://concons.github.io/baidu/day7-8/三栏布局/左定右定中自变/1.html)
 - [淘宝双飞翼](https://concons.github.io/baidu/day7-8/三栏布局/左定右定中自变/2.html)
 - [flex法](https://concons.github.io/baidu/day7-8/三栏布局/左定右定中自变/3.html)
+> 页面练习
+
+[Demo](https://concons.github.io/baidu/day7-8/index.html)
+## day9-11
+[来做一个漂亮的网页](https://concons.github.io/baidu/day9-11/index.html)

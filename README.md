@@ -1,5 +1,23 @@
 # 百度2018
 
+## day1
+[开始](https://concons.github.io/baidu/day1/index.html)
+
+## day2 
+[制作一份简单的简历](https://concons.github.io/baidu/day2/index.html)
+
+## day3 
+[为简历添些色彩](https://concons.github.io/baidu/day3/index.html)
+
+### day4
+[练习一下背景和选择器](https://concons.github.io/baidu/day4/index.html)
+
+### day5-6
+> 三种简历
+- [第一种](https://concons.github.io/baidu/day5-6/index.html)
+- [第二种](https://concons.github.io/baidu/day5-6/index2.html)
+- [第三种](https://concons.github.io/baidu/day5-6/index3.html)
+
 ## day7-8
 ### 两栏布局 
 > 左侧30%右侧70%

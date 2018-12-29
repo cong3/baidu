@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="499e50d4-76c0-4f9f-8096-a38022b46e9a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/day12-15/Proxima-Nova.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/css/reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/img/Face1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/img/Face2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/img/Face3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/img/Face4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/img/Face5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/img/Face6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/img/Face7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/img/acount_avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/img/msg_pic1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/img/msg_pic2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day12-15/note.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day12-15/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/day12-15/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,12 +22,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="555">
-                <caret line="48" column="50" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
+                <caret line="48" column="61" lean-forward="true" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="61" />
               </first_editor>
               <second_editor />
             </state>
@@ -59,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/day12-15/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1818">
-              <caret line="345" column="43" selection-start-line="345" selection-start-column="36" selection-end-line="345" selection-end-column="43" />
+            <state relative-caret-position="323">
+              <caret line="347" column="28" selection-start-line="347" selection-start-column="28" selection-end-line="347" selection-end-column="28" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -148,9 +132,9 @@
         <option value="$PROJECT_DIR$/day1/index.html" />
         <option value="$PROJECT_DIR$/day12-15/css/reset.css" />
         <option value="$PROJECT_DIR$/day12-15/note.html" />
-        <option value="$PROJECT_DIR$/day12-15/index.html" />
         <option value="$PROJECT_DIR$/day12-15/css/index.css" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/day12-15/index.html" />
       </list>
     </option>
   </component>
@@ -249,12 +233,12 @@
       <workItem from="1545889749984" duration="17228000" />
       <workItem from="1545962631155" duration="3835000" />
       <workItem from="1545977353432" duration="14577000" />
-      <workItem from="1546049685158" duration="44000" />
+      <workItem from="1546049685158" duration="204000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118630000" />
+    <option name="totallyTimeSpent" value="118790000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -555,10 +539,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/day12-15/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="515" column="22" selection-start-line="515" selection-start-column="22" selection-end-line="515" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="555">
+            <caret line="48" column="61" lean-forward="true" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="61" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/day12-15/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1818">
-          <caret line="345" column="43" selection-start-line="345" selection-start-column="36" selection-end-line="345" selection-end-column="43" />
+        <state relative-caret-position="323">
+          <caret line="347" column="28" selection-start-line="347" selection-start-column="28" selection-end-line="347" selection-end-column="28" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -571,23 +572,6 @@
             <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day12-15/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="515" column="22" selection-start-line="515" selection-start-column="22" selection-end-line="515" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="555">
-            <caret line="48" column="50" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>

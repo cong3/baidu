@@ -47,3 +47,5 @@
 [来做一个漂亮的网页](https://concons.github.io/baidu/day9-11/index.html)
 ## day12-15
 [复杂页面的实现](https://concons.github.io/baidu/day12-15/index.html)
+## day16
+[开始感受js的乐趣](https://concons.github.io/baidu/day16/index.html)

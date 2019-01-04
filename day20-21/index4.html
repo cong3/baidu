@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="fade-obj" style="width:300px;height:300px;background:#000;opacity: 1"></div>
+<button id="fade-btn">淡出</button>
+
+<script>
+    var div = document.getElementById("fade-obj");
+        button = document.querySelector("#fade-btn");
+
+        button.addEventListener("click",change);
+        var flag=true,num=10,fadeText = '';
+
+        function change() {
+            console.log(1);
+            button.disabled = true;
+            var id = setInterval(function () {
+                if (flag) {
+                    num--;
+                } else {
+                    num++;
+                }
+                div.style.opacity = num /10;
+                if (num <= 0 || num >= 10) {
+                    clearInterval(id);
+                    button.disabled = false;
+                    if(num){
+                        fadeText = (flag = true)? '淡出' : '淡入';
+                        button.innerHTML = fadeText;
+                    }else{
+                        fadeText = (flag = false) ? '淡出' : '淡入';
+                        button.innerHTML = fadeText;
+                    }
+                }
+            },100)
+
+        };
+
+</script>
+</body>
+</html>

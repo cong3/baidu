@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<input id="name" type="text">
+<button id="submit-btn">Submit</button>
+
+<script>
+    document.querySelector("#submit-btn").onclick = function () {
+        var name = document.querySelector("#name").value;
+        console.log(name);
+    };
+    document.onkeydown = function (event) {
+        var e = event || window.event;
+
+        if (e && e.keyCode == 13) {
+            var name = document.querySelector("#name").value;
+            console.log(name);
+        }else if (e && e.keyCode == 27) {
+            var name = document.querySelector("#name");
+            name.value = '';
+        }
+
+    }
+</script>
+</body>
+</html>

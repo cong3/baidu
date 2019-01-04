@@ -49,3 +49,14 @@
 [复杂页面的实现](https://concons.github.io/baidu/day12-15/index.html)
 ## day16
 [开始感受js的乐趣](https://concons.github.io/baidu/day16/index.html)
+## day16
+[开始感受js的乐趣](https://concons.github.io/baidu/day16/index.html)
+## day17-18
+>“如果”可以“重来”
+
+[练习一](https://concons.github.io/baidu/day17-18/index.html)
+[练习一](https://concons.github.io/baidu/day17-18/index2.html)
+## day19
+[找到那个DOM](https://concons.github.io/baidu/day19/index.html)
+
+[练习二](https://concons.github.io/baidu/day19/index2.html)

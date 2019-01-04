@@ -6,21 +6,89 @@
 </head>
 <body>
 <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+<input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
 <button id="trans-btn">转化为二进制</button>
 <p id="result">运算结果</p>
+<div id="jiujiu">
+
+</div>
 <script>
 
     function dec2bin(decNumber) {
+        // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
         if(isNaN(decNumber) || decNumber<0) {
             console.log('请输入正整数');
         }
-
-        // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+        var arr = [];
+        while (true) {
+            if (decNumber%2 ==0) {
+                arr.push(0);
+            } else {
+                arr.push(1);
+            }
+            decNumber =Math.floor(decNumber /2);
+            if (decNumber<=1) {
+                arr.push(1);
+                break
+            }
+        }
+        arr.reverse();
+        return arr.join('');
     }
-
     // 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
     // Some coding
 
+    document.getElementById("trans-btn").onclick  = function () {
+        var decNumber  = document.getElementById("dec-number").value;
+        var result = dec2bin(decNumber);
+        var bit = document.getElementById("bin-bit").value;
+        if (result.length < bit) {
+            var zero = bit - result.length;
+            for (var i=zero; i>0; i--) {
+                result = '0'+result;
+            }
+        }
+        document.getElementById("result").innerText  = result;
+    }
+    for (let i=0; i <=100; i++) {
+        if (i%3 == 0 && i!=0) {
+            console.log('PA');
+        } else {
+            console.log(i);
+        }
+    }
+
+    for (let i=1; i<10; i++) {
+        for (let j=1; j <=i ;j++) {
+            console.log(i+'x'+j+'='+i*j);
+        }
+        console.log(' ');
+    }
+    var str = '<table>';
+    for (let i=1; i<10; i++) {
+        str+='<tr>';
+        for (let j=1; j <=i ;j++) {
+            var num = i+'x'+j+'='+i*j;
+            str+='<td>'+num+'+</td>'
+        }
+        str+='</tr>';
+    }
+    str += '</table>';
+    document.getElementById("jiujiu").innerHTML = str;
+    window.onload = function () {
+        var d = new Date();
+        var hour = d.getHours();
+        if (0<hour<10) {
+            alert('早上好')
+        } else if (10<=hour<14) {
+            alert('中午好')
+        } else if (14<=hour<19) {
+            alert('下午好')
+        }else {
+            alert('晚上好')
+        }
+
+    }
 </script>
 </body>
 </html>

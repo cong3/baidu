@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input id="queue-input" type="text">
+<p id="queue-cont">队列内容：apple-&gt;pear</p>
+<button id="in-btn">入队</button>
+<button id="out-btn">出队</button>
+<button id="font-btn">打印队头元素内容</button>
+<button id="empty-btn">判断队列是否为空</button>
+
+<script>
+
+    var queue = ["apple", "pear"];
+    p = document.getElementById("queue-cont");
+    update();
+    function update() {
+        var text = queue.join('<-');
+        p.textContent = '队列内容：'+text;
+    }
+    document.getElementById("in-btn").onclick = function () {
+        var value = document.getElementById("queue-input").value;
+        queue.push(value);
+        update();
+    }
+    document.getElementById("out-btn").onclick = function () {
+        queue.shift();
+        update();
+    }
+    document.getElementById("font-btn").onclick = function () {
+        if (queue.length==0) {
+            alert('当前队列为空')
+        }else {
+            console.log(queue[0]);
+        }
+    }
+    document.getElementById("empty-btn").onclick = function () {
+        if (queue.length==0) {
+            alert('当前队列为空')
+        }else {
+            alert('不为空');
+        }
+    }
+</script>
+
+</body>
+</html>

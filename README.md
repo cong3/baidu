@@ -55,8 +55,41 @@
 >“如果”可以“重来”
 
 [练习一](https://concons.github.io/baidu/day17-18/index.html)
+
 [练习一](https://concons.github.io/baidu/day17-18/index2.html)
 ## day19
 [找到那个DOM](https://concons.github.io/baidu/day19/index.html)
 
 [练习二](https://concons.github.io/baidu/day19/index2.html)
+## day20-21
+>让你和页面对话
+
+[练习一](https://concons.github.io/baidu/day20-21/index.html)
+
+[练习二](https://concons.github.io/baidu/day20-21/index2.html)
+
+[练习三](https://concons.github.io/baidu/day20-21/index3.html)
+
+[练习四](https://concons.github.io/baidu/day20-21/index4.html)
+
+[练习五](https://concons.github.io/baidu/day20-21/index5.html)
+
+## day22-24
+>JavaScript里面的居民们
+
+[练习一](https://concons.github.io/baidu/day22-24/index.html)
+
+[练习二](https://concons.github.io/baidu/day22-24/index2.html)
+
+[练习三](https://concons.github.io/baidu/day22-24/index3.html)
+
+[练习四](https://concons.github.io/baidu/day22-24/index4.html)
+
+[练习五](https://concons.github.io/baidu/day22-24/index5.html)
+
+[练习六](https://concons.github.io/baidu/day22-24/index6.html)
+
+[练习七](https://concons.github.io/baidu/day22-24/index7.html)
+
+[练习八](https://concons.github.io/baidu/day22-24/index8.html)
+

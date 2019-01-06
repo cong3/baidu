@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <label>String A:
+        <input id="radio-a" type="radio" checked="true" name="str-obj" value="a">
+    </label>
+    <textarea id="str-a"></textarea>
+    <label>String B:
+        <input id="radio-b" type="radio" name="str-obj" value="b">
+    </label>
+    <textarea id="str-b"></textarea>
+    <label>Num A：<input id="num-a" type="number" value="0"></label>
+    <label>Num B：<input id="num-b" type="number" value="1"></label>
+</div>
+<div id="buttons">
+    <button id="get-length">获取当前选中输入的内容长度</button>
+    <button id="three">当前选中输入中的第3个字符</button>
+    <button id="concat">把两个输入框的文字连接在一起输出（concat）</button>
+    <button id="index-of">输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+    <button id="last-index">输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+    <button id="slice">使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+    <button id="line">当前选中输入框的行数</button>
+    <button id="sub-str">使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+    <button id="upper">把所选输入框中的内容全部转为大写</button>
+    <button id="lower">把所选输入框中的内容全部转为小写</button>
+    <button id="space">把所选输入框中内容的半角空格全部去除</button>
+    <button id="replace">把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+</div>
+<p id="result"></p>
+<script>
+    var labA = document.getElementById("radio-a");
+    var labB = document.getElementById("radio-b");
+    var strA = document.getElementById("str-a");
+    var strB = document.getElementById("str-b");
+    var numA = document.getElementById("num-a");
+    var numB = document.getElementById("num-b");
+    var p    = document.getElementById("result");
+    document.getElementById("get-length").onclick = function (e) {
+        var length = 0;
+        if(labA.checked == true) {
+            length = strA.value.length;
+        }else if (labB.checked == true){
+            length = strB.value.length;
+        }
+        p.textContent = "长度为"+length;
+    }
+    document.getElementById("three").onclick = function (e) {
+        var str = '';
+        if(labA.checked == true) {
+            str = strA.value.slice(2,3);
+        }else if (labB.checked == true){
+            str = strB.value.slice(2,3);;
+        }
+        p.textContent = "当前选中的第三个字符为"+str;
+    }
+    document.getElementById("concat").onclick = function (e) {
+        var str = '';
+        str = strA.value.concat(strB.value);
+        p.textContent = "合并输出"+str;
+    }
+    document.getElementById("index-of").onclick = function (e) {
+        var length = 0;
+        var sa = strA.value;
+        var sb = strB.value;
+        var index = sa.indexOf(sb);
+        if (index ==-1) {
+            p.textContent = "B在A中未出现";
+        }else {
+            p.textContent = "B内容在A中第一次出现的位置是"+index;
+        }
+
+    }
+    document.getElementById("last-index").onclick = function (e) {
+        var length = 0;
+        var sa = strA.value;
+        var sb = strB.value;
+        var index = sb.lastIndexOf(sa);
+        if (index ==-1) {
+            p.textContent = "A在B中未出现";
+        }else {
+            p.textContent = "A内容中在B中最后一次出现的位置是"+index;
+        }
+    }
+    document.getElementById("slice").onclick = function () {
+        var str = '';
+        if(labA.checked == true) {
+            str = strA.value;
+        }else if (labB.checked == true){
+            str = strB.value;
+        }
+        var numa = numA.value;
+        var numb = numB.value;
+        var res = str.slice(numa,numb);
+        p.textContent = "内容为"+res;
+    }
+    document.getElementById("line").onclick = function () {
+        var str = '';
+        if(labA.checked == true) {
+            str = strA.value;
+        }else if (labB.checked == true){
+            str = strB.value;
+        }
+        var res = str.split("\n").length;
+        p.textContent = "行数为"+res;
+    };
+    document.getElementById("sub-str").onclick = function () {
+        var str = '';
+        if(labA.checked == true) {
+            str = strA.value;
+        }else if (labB.checked == true){
+            str = strB.value;
+        }
+        var numa = numA.value;
+        var numb = numB.value;
+        var res = str.substr(numa,numb);
+        p.textContent = "内容为"+res;
+    }
+    document.getElementById("upper").onclick = function () {
+        var str = '';
+        if(labA.checked == true) {
+            str = strA.value;
+        }else if (labB.checked == true){
+            str = strB.value;
+        }
+
+        p.textContent = "内容为"+str.toUpperCase();
+    }
+    document.getElementById("lower").onclick = function () {
+        var str = '';
+        if(labA.checked == true) {
+            str = strA.value;
+        }else if (labB.checked == true){
+            str = strB.value;
+        }
+
+        p.textContent = "内容为"+str.toLowerCase();
+    }
+    document.getElementById("space").onclick = function () {
+        var str = '';
+        if(labA.checked == true) {
+            str = strA.value;
+        }else if (labB.checked == true){
+            str = strB.value;
+        }
+        var res = str.replace(/\s+/g,'');
+        p.textContent = "内容为"+res;
+    }
+    document.getElementById("replace").onclick = function () {
+        var str = '';
+        if(labA.checked == true) {
+            str = strA.value;
+            ostr= strB.value
+        }else if (labB.checked == true){
+            str = strB.value;
+            ostr= strA.value
+        }
+        var res = str.replace(/'a'/g,ostr)
+        p.textContent = "内容为"+res;
+    }
+</script>
+
+</body>
+</html>

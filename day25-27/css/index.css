@@ -1,0 +1,7 @@
+#email-sug-wrapper {
+    margin: 0;
+    padding: 0;
+}
+#email-sug-wrapper li {
+    list-style: none;
+}

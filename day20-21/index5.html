@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #smile {
+            margin: 0 auto;
+            width: 480px;
+            height:480px;
+            background: url("http://ife.baidu.com/2016/static/img/erik_ce204002.jpg") no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrapper">
+    <div id="smile">
+
+    </div>
+</div>
+<script>
+    var num = 1; // 共17张图片
+    var height = 480;
+    var flag = true;
+    onload = function () {
+        beginSmile();
+    };
+    function beginSmile() {
+        setInterval(function () {
+            var smile = document.getElementById("smile");
+            if (num == 16) {
+                flag = false
+            }else if (num==1) {
+                flag = true;
+            }
+            smile.style.backgroundPositionY = -height * num+'px';
+
+            if (flag) {
+                num++;
+            }else {
+                num--;
+            }
+
+        },100)
+    }
+
+
+</script>
+</body>
+</html>

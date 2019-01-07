@@ -94,4 +94,3 @@ function getTime() {
     p.textContent = str;
 }
 setInterval(getTime,1000);
->>>>>>> b62dff0c94d5687811d854139390bdc1fdb09b79

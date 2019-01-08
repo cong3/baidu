@@ -68,6 +68,57 @@ function rendering(data) {
     wrapper.innerHTML = '';
     wrapper.appendChild(table);
 }
+function createCheckBox(id, obj ) {
+    var wrapper = document.getElementById(id);
+    var one = document.createElement("input");
+    one.type = 'checkbox';
+    one.setAttribute("checkbox-type","all");
+    wrapper.appendChild(one);
+    var text = document.createTextNode("全选");
+    wrapper.appendChild(text);
+    for (let i=0; i<obj.length; i++) {
+        var input = document.createElement("input");
+        input.type = 'checkbox';
+        input.setAttribute("checkbox-type","zi");
+        input.value = obj[i].value;
+        wrapper.appendChild(input);
+        var text = document.createTextNode(obj[i].text);
+        wrapper.appendChild(text);
+    }
+    // 给容器做一个事件委托 = function() {
+    //     if 是checkbox
+    //         读取自定义属性
+    //     if 全选
+    //         做全选对应的逻辑
+    //     else
+    //         做子选项对应的逻辑
+    // }
+}
+
+// 对象或数组自己根据喜好实现均可
+createCheckBox('region-radio-wrapper', [{
+    value: 1,
+    text: "华北"
+}, {
+    value: 2,
+    text: "华南"
+},{
+    value: 3,
+    text: "华东"
+}]);
+
+createCheckBox('product-radio-wrapper', [{
+    value: 1,
+    text: "手机"
+}, {
+    value: 2,
+    text: "笔记本"
+},{
+    value: 3,
+    text: "智能音箱"
+}]);
+
+
 rendering(getData());
 document.getElementById("region-select").onchange = function() {
     rendering(getData());

@@ -1,25 +1,47 @@
 function getData() {
-    var regSelect = document.getElementById("region-select");
-    var regions = regSelect.querySelectorAll("option");
-    var region;
+    var regSelect = document.getElementById("region-radio-wrapper");
+    var regions = regSelect.querySelectorAll("input");
+    var regionArr = [];
     for (let i=0; i<regions.length; i++) {
-        if (regions[i].selected){
-            region = regions[i];
+        if (regions[i].checked && regions[i].getAttribute("checkbox-type") != 'all'){
+            regionArr.push(regions[i].value);
         }
     }
-    var  regValue = region.value;
-    var proSelect = document.getElementById("product-select");
-    var products  = proSelect.querySelectorAll("option");
-    var product;
+    var proSelect = document.getElementById("product-radio-wrapper");
+    var products  = proSelect.querySelectorAll("input");
+    var productArr= [];
     for (let i=0; i<products.length; i++) {
-        if (products[i].selected){
-            product = products[i];
+        if (products[i].checked && products[i].getAttribute("checkbox-type") != 'all'){
+            productArr.push(products[i].value);
         }
     }
-    var proValue = product.value;
+    var regionValues = [];
+    var productValues= [];
+    if (regionArr.indexOf('1') != -1) {
+        regionValues.push('华北');
+    }
+    if (regionArr.indexOf('2') != -1) {
+        regionValues.push('华南');
+    }
+    if (regionArr.indexOf('3') != -1) {
+        regionValues.push('华东');
+    }
+    if (productArr.indexOf('1') != -1) {
+        productValues.push('手机');
+    }
+    if (productArr.indexOf('2') != -1) {
+        productValues.push('笔记本');
+    }
+    if (productArr.indexOf('3') != -1) {
+        productValues.push('智能音箱');
+    }
+    console.log(regionArr);
+    console.log(regionValues);
+    console.log(productArr);
+    console.log(productValues);
     var  arr = [];
     for (let i=0; i<sourceData.length; i++) {
-        if (sourceData[i].region==regValue && sourceData[i].product == proValue) {
+        if (regionValues.indexOf(sourceData[i].region) != -1 && productValues.indexOf(sourceData[i].product) != -1) {
             arr.push(sourceData[i]);
         }
     }
@@ -85,14 +107,43 @@ function createCheckBox(id, obj ) {
         var text = document.createTextNode(obj[i].text);
         wrapper.appendChild(text);
     }
-    // 给容器做一个事件委托 = function() {
-    //     if 是checkbox
-    //         读取自定义属性
-    //     if 全选
-    //         做全选对应的逻辑
-    //     else
-    //         做子选项对应的逻辑
-    // }
+    wrapper.addEventListener("click" ,function (e) {
+        var target = e.target;
+        if (target.nodeName.toLowerCase() == 'input' && target.type == 'checkbox') {
+            var attr = target.getAttribute("checkbox-type");
+            if (attr == 'all') {
+                var parent = target.parentNode;
+                var inputs = parent.querySelectorAll("input");
+                for (var i=0; i<inputs.length; i++) {
+                    if (!inputs[i].checked) {
+                        inputs[i].checked = true;
+                    }
+                }
+            }else {
+                var parent = target.parentNode;
+                var inputs = parent.querySelectorAll("input");
+                var all = '';
+                var isAllChecked = 1;   // 假设都是选中
+
+                for (var i=inputs.length-1; i>=0; i--) {
+                    if (inputs[i].getAttribute("checkbox-type") == 'all') {
+                        all = inputs[i];
+                    }else {
+                        if (!inputs[i].checked) {
+                            isAllChecked =0;
+                        }
+                    }
+                }
+                if (isAllChecked) {
+                    all.checked = true;
+                }else {
+                    all.checked = false;
+                }
+
+            }
+        }
+
+    })
 }
 
 // 对象或数组自己根据喜好实现均可
@@ -120,9 +171,9 @@ createCheckBox('product-radio-wrapper', [{
 
 
 rendering(getData());
-document.getElementById("region-select").onchange = function() {
+document.getElementById("region-radio-wrapper").onclick = function() {
     rendering(getData());
 };
-document.getElementById("product-select").onchange = function() {
+document.getElementById("product-radio-wrapper").onclick = function() {
     rendering(getData());
 };

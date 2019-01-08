@@ -1,7 +1,27 @@
+#email-input {
+    width: 200px;
+    height: 30px;
+    border: 1px solid #CCCCCC ;
+    border-radius: 2px;
+}
 #email-sug-wrapper {
+    width: 200px;
     margin: 0;
     padding: 0;
 }
 #email-sug-wrapper li {
     list-style: none;
+    width: 202px;
+    height: 25px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+#email-sug-wrapper li:hover {
+    background-color: #66CCFF;
+}
+#email-sug-wrapper li:active {
+    background-color: pink;
+}
+.used {
+    background-color: pink;
 }

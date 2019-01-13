@@ -1,0 +1,38 @@
+#draw-wrapper {
+    margin-top: 30px;
+    height: 300px;
+    overflow: visible;
+    display: flex;
+    flex-wrap: nowrap;
+}
+#draw-wrapper div {
+    flex: 1;
+}
+#table-wrapper {
+    margin-top: 10px;
+}
+#table-wrapper table thead {
+    height: 50px;
+}
+#table-wrapper table thead th {
+    height: 50px;
+    background-color: rgb(156, 186, 95);
+    color: #fff;
+    border-bottom-width: 0;
+}
+#table-wrapper table {
+    border-spacing: 0;
+    text-align: center;
+    width: 800px;
+    margin: 0 auto;
+}
+#table-wrapper table td{
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+}
+#table-wrapper table tr td:last-child{
+    border-right: 1px solid #000;
+}
+#table-wrapper table tr:hover{
+    background-color: #32d3eb;
+}

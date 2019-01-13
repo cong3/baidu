@@ -1,0 +1,53 @@
+#draw-wrapper {
+    margin-top: 30px;
+    height: 300px;
+    overflow: visible;
+    display: flex;
+    flex-wrap: nowrap;
+}
+#draw-wrapper div {
+    flex: 1;
+}
+#table-wrapper {
+    margin-top: 10px;
+}
+#table-wrapper table thead {
+    height: 50px;
+}
+#table-wrapper table thead th {
+    height: 50px;
+    background-color: rgb(156, 186, 95);
+    color: #fff;
+    border-bottom-width: 0;
+}
+#table-wrapper table {
+    border-spacing: 0;
+    text-align: center;
+    width: 1300px;
+    margin: 0 auto;
+}
+#table-wrapper table td{
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+}
+#table-wrapper table td input {
+    width: 30px;
+}
+#table-wrapper table tr td:last-child{
+    border-right: 1px solid #000;
+}
+#table-wrapper table tr:hover{
+    background-color: #32d3eb;
+}
+.pencil {
+    width: 95px;
+    position: relative;
+}
+.pencil:hover::after {
+    content: "编辑";
+    font-size: 5px;
+    color: gray;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="js/data.js"></script>
+<script>
+    const TITLE = { // 给原数据某些属性加中文
+        region: '地区',
+        product: '商品'
+    };
+   function getOptionsData(){
+        this.optsObj = sourceData.reduce((optsObj, dataObj) =>{
+            for(let prop in dataObj){
+                if(dataObj.hasOwnProperty(prop)){
+                    if(optsObj.hasOwnProperty(prop)){
+                        if(optsObj[prop].options.indexOf(dataObj[prop]) === -1){ // 如果已筛选的数据没有当前遍历到的选项则插入
+                            optsObj[prop].options.push(dataObj[prop]);
+                        }
+                    }else{
+                        if(prop !== 'sale'){
+                            optsObj[prop] = {}
+                            optsObj[prop].options = [dataObj[prop]];
+                            optsObj[prop].title = TITLE[prop] ? TITLE[prop] : '';
+                        }
+                    }
+                }
+            }
+            return optsObj;
+        }, {});
+
+        return this.optsObj;
+    }
+   var res = getOptionsData();
+    console.log(res);
+</script>
+
+</body>
+</html>

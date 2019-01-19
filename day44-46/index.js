@@ -26,8 +26,8 @@ class Restaurant
         let restaurant =this;
         this.cash = cash;           // 现金
         this.msgContent = document.querySelector(msgContentId);
-        this.msgWrapper = msgContent.parentNode;
-        this.menu  = [];
+        this.msgWrapper = this.msgContent.parentNode;
+        this.menu  = [];         // 可以点的菜
         this.queue = [];        // 等待人列表
         this.handler = [];
         // 职员
@@ -39,7 +39,7 @@ class Restaurant
                     let sameProfessionEmployee;
                     if (staff.length > 0) {
                         // 只雇佣一个职员
-                        sameProfessionEmployee = staff.find(employee.constructor.name === person.constructor.name);
+                        sameProfessionEmployee = staff.find(employee => employee.constructor.name === person.constructor.name);
                     }
                     // 没有雇佣过
                     if (!sameProfessionEmployee) {
@@ -108,7 +108,7 @@ class Restaurant
 
         // 顾客已就坐
         this.watch('customersitdown', customer =>{
-            restaurant.sendMessage('restaurant', 'Customer has sat down!');
+            restaurant.sendMessage('restaurant', 'Customer has sit down!');
             // 调用自己的点菜
             customer.order(restaurant);
         });
@@ -189,7 +189,7 @@ class Restaurant
         }
     }
     sendMessage(writer, msg) {
-        let li = creaeElm(`<li><b>${writer}:</b>${msg}</li>`);
+        let li = createElm(`<li><b>${writer}:</b>${msg}</li>`);
         this.msgContent.appendChild(li);
         let scrollHeight =this.msgWrapper.scrollHeight;
         this.msgWrapper.scrollTo(0, scrollHeight);
@@ -213,14 +213,121 @@ class Waiter extends Staff{
     constructor(name, salary) {
         let  work = function (restaurant, arg) {
             if (Array.isArray(arg)) {
-                restaurant.emit('gotthemenu',)
+                restaurant.emit('gotthemenu', arg);
             } else {
-
+                restaurant.emit('servedfood', arg);
             }
-        }
+        };
         super(name, salary, work);
     }
-
 }
+
+class Cook extends Staff {
+    constructor(name, salary) {
+        let  work = function (restaurant, foods) {
+            let timer = setInterval(function(){
+                restaurant.emit('cookedfood', foods.shift());
+                if(foods.length === 0) clearInterval(timer);
+            },5000);
+        };
+        super(name, salary, work);
+    }
+}
+
+class Food{
+    constructor({name, cost, sale}){
+        this.name= name;
+        this.cost = cost;
+        this.sale = sale;
+    }
+}
+
+class Customer {
+    constructor() {
+        this.ordered = [];
+    }
+    order(restaurant) {
+        let self =this;
+        let randomNumber = Math.floor(Math.random() * 5);
+        let count = randomNumber === 0?1:randomNumber;
+        for (let i=0; i<count; i++) {
+            let randomNumber = Math.floor(Math.random() * restaurant.menu.length)
+            let food = restaurant.menu[randomNumber === 0? 1:randomNumber];
+            this.ordered.push(food);
+        }
+        setTimeout(function () {
+            restaurant.emit('orderedfoods', self);
+        }, 5000);
+    }
+    eat(restaurant, food) {
+        for(let i=0; i<this.ordered.length; i++) {
+            if (this.ordered[i].name === food.name) {
+                this.ordered.splice(i,1);
+                restaurant.emit('eatedfood', food);
+                break;
+            }
+        }
+        if(this.ordered.length === 0) setTimeout(restaurant.seat.leave(),);
+    }
+}
+
+//单例模式
+function getSingle(fn) {
+    let staff;
+    return function (...args) {
+        return staff || (staff = new fn(...args));
+    }
+}
+
+let createSingleWaiter = getSingle(Waiter);
+let createSingleCook = getSingle(Cook);
+
+let chinaFoodR = new Restaurant({cash:20000, seat: 1, msgContentId: '.msgContainer ul'});
+let waiter = createSingleWaiter('John', 2000);
+let cook = createSingleCook('Sean', 4000);
+let foods = menu.map(food => new Food(food));
+
+chinaFoodR.staff.hire(waiter);
+chinaFoodR.staff.hire(cook);
+chinaFoodR.addFoods(foods);
+for (let i=0; i< 200; i++) {
+    chinaFoodR.queueUp(new Customer());
+}
+chinaFoodR.start();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

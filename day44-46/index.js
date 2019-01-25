@@ -27,8 +27,8 @@ class Restaurant
         this.cash = cash;           // 现金
         this.msgContent = document.querySelector(msgContentId);
         this.msgWrapper = this.msgContent.parentNode;
-        this.menu  = [];         // 可以点的菜
-        this.queue = [];        // 等待人列表
+        this.menu  = [];         // 餐厅菜单
+        this.queue = [];        //  队列
         this.handler = [];
         // 职员
         this.staff = (function () {

@@ -1,0 +1,180 @@
+@import "reset.css";
+body {
+    background-color: rgba(136, 136, 136, .7);
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    transform: translate(-50%,-50%);
+    width: 1000px;
+    height: 650px;
+    background-color: #fff;
+}
+
+.basic {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 235, 205, 1);
+}
+.basic::before {
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 80%;
+    border-top: 8px solid rgba(85, 85, 85, 1);
+    border-right: 8px solid rgba(85, 85, 85, 1);
+    border-bottom: 8px solid transparent;
+}
+.basic::after {
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 80%;
+    border-bottom: 8px solid rgba(85, 85, 85, 1);
+    border-left: 8px solid rgba(85, 85, 85, 1);
+    border-top: 8px solid transparent;
+}
+.basic .line {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 10px;
+    height: 50%;
+    background-color: rgba(85, 85, 85, 1);
+    border-radius: 10%;
+}
+.cash {
+    width: 100px;
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    border-radius: 0 0 5% 5% ;
+    background-color: rgba(255, 165, 0, 1);
+}
+.kitchen {
+    position: absolute;
+    right: 8px;
+    top: 7px;
+    width: 280px;
+    height: 200px;
+
+}
+.chef-img {
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(122, 64, 12, 1);
+    border-radius: 0 0 0 20%;
+}
+.kitchen .list {
+    float: right;
+    width: 130px;
+    height: 150px;
+    background-color: rgba(204, 204, 204, 1);
+}
+.kitchen .list .title {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    color: #fff;
+    background-color: rgba(51, 51, 51, 1);
+}
+.chef-state {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    height: 20px;
+    background-color: rgba(255, 153, 0, 1);
+    color: #fff;
+}
+.hall {
+    position: absolute;
+    right: 50px;
+    bottom: 10px;
+    width: 800px;
+    height: 200px;
+}
+.hall  {
+    display: flex;
+}
+.seat {
+    width: 200px;
+    height: 200px;
+    position:  relative;
+}
+.seat .desk {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    height: 80px;
+    border-radius: 10%;
+    background-color: rgba(133, 196, 49, 1);
+
+}
+.seat .desk ul {
+    position: absolute;
+    bottom: 100% ;
+    left: 10px;
+    list-style: none;
+}
+.seat .chair {
+    position: absolute;
+    top: 120px;
+    left: 60px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: green;
+}
+.man {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.man .waiter {
+    position: absolute;
+    width: 6%;
+    height: 8%;
+    background: center/cover no-repeat;
+    border-radius: 10%;
+}
+
+.man .chef {
+    position: absolute;
+    width: 10%;
+    height: 15%;
+    background: center/cover no-repeat;
+    border-radius: 10%;
+}
+.man .customers .customer {
+    position: absolute;
+    width: 7%;
+    height: 11%;
+    background: center/cover no-repeat;
+    border-radius: 10%;
+}
+.man .customers .msg {
+    position: absolute;
+    padding: 5px;
+    bottom: 50%;
+    left: 80px;
+    width: 100px;
+    font-size: 15px;
+    background-color: #fff;
+    border-radius: 15%;
+}

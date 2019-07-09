@@ -23,16 +23,16 @@ class Restaurant {
     addListener() {
         let restaurant = this;
 
+        // 入座
         this.watch('hasemptyseat', (idx) => {
             if (restaurant.queue.getLength() > 0) {
-                let customer = restaurant.queue.dequeue();
-                let idx = restaurant.seats.getEmptySeatIndex();
+                let customer = restaurant.queue.dequeue();          // 弹出一个顾客
                 restaurant.seats.sit(idx, customer);
                 customer.addTask('toseat', idx);
             }
         });
 
-        // 出队入座
+        // 查看是否有座位
         this.watch('queueup', ()=>{
             let idx = restaurant.seats.getEmptySeatIndex();
             if(idx !== -1){

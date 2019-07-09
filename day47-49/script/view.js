@@ -1,4 +1,5 @@
 class View {
+
     constructor(id, timeScale){
         this.timeScale = timeScale;
         this.$container  = document.querySelector(id);
@@ -12,7 +13,6 @@ class View {
         let ctHeight = getComputedStyle(this.$container).height;
         this.initialCookState();
     }
-
     // 初始化厨师状态
     initialCookState() {
         this.$cookState.innerHTML = `<span class="thing">空闲中</span><span class="time"></span>`;
@@ -21,7 +21,6 @@ class View {
     setCash(cash) {
         this.$cashNum.innerText = cash;
     }
-
     // 添加服务员
     addWaiter(waiter) {
         let [initialLeft, initialTop] = positions.waiter.toTable[0];

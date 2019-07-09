@@ -77,10 +77,12 @@ class Customer {
             if (restaurant.queue.getLength() > 0) {
                 $restaurantView.updateQueue(restaurant.queue);
             }
+
             $restaurantView.moveToSeat(customer.element, idx)
                 .then(() => {
                     resolve(customer);
                 })
+
         })
     }
     do() {

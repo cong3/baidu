@@ -2,8 +2,8 @@ class  Staff {
     constructor({name, salary, avatarUrl}) {
         this.name = name;
         this.salary = salary;
-        this.avatarUrl = avatarUrl;
-        this.taskStack = [];
+        this.avatarUrl = avatarUrl;     // 图片
+        this.taskStack = [];            // 任务列表
         this.state = 'waiting';
     }
 

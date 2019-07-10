@@ -99,3 +99,5 @@
 ## day28-30
 [给爱的人发个邮件吧](https://concons.github.io/baidu/day25-27/index.html)
 
+## day31-41
+[我是精明的小卖家](https://concons.github.io/baidu/day39-41/index.html)
